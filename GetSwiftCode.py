@@ -133,7 +133,3 @@ while True :
         break # end of packages to be assigned - exit and print the results
 print("assignments:", assignments)
 print("unassignedPackageIds:", unassignedPackageIds)
-
-#
-# Step 6: think about edge case handling - what if number of drones or number of packages are zero
-#
