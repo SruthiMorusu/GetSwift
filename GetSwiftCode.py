@@ -97,8 +97,7 @@ packages_list = sorted(packages_list,key=by_buffer_dist)
 
 #
 # Step 5: Now start assigning the packages to the drones taking time into account
-#
-#(drone distance + package distance)/speed < deadline - present_time
+
 i = j = 0;
 assignments = []
 unassignedPackageIds = []
