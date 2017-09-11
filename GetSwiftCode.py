@@ -18,7 +18,7 @@ for elem in x:
     drones_list.append(temp)
     #print(temp);
 # print generic info
-print("Number of drones available: ", len(drones_list))
+#print("Number of drones available: ", len(drones_list))
 
 #
 # Step 2: Get the data from packages API and create a curated list
@@ -30,7 +30,7 @@ for elem in x:
     temp = json.dumps(elem);
     packages_list.append(json.loads(temp));
 # print generic info
-print("Number of packages available: ", len(packages_list));
+#print("Number of packages available: ", len(packages_list));
 
 #
 # Step 3: add distance information to the lists and sort them
@@ -103,27 +103,27 @@ i = j = 0;
 assignments = []
 unassignedPackageIds = []
 while True :
-    print( "\n", i, ":", j )
+    #print( "\n", i, ":", j )
     drone_info = drones_list[i]
     package_info = packages_list[j]
-    print("Drone_distance:", drone_info["distance"])
-    print("Package buffer_dist:", package_info["buffer_dist"])
-    print("Package_distance:", package_info["distance"])
-    print("Package_time:", package_info["timediff"])
+    #print("Drone_distance:", drone_info["distance"])
+    #print("Package buffer_dist:", package_info["buffer_dist"])
+    #print("Package_distance:", package_info["distance"])
+    #print("Package_time:", package_info["timediff"])
     # if package buffer is less than drone distance it goes into unassigned
     # this tries to optimize the allocation
     if package_info["buffer_dist"] >= drone_info["distance"]:
-        print("package: ", package_info["packageId"], " assigned to droneId:", drone_info["droneId"])
+        #print("package: ", package_info["packageId"], " assigned to droneId:", drone_info["droneId"])
         assignments.append({"droneId": drone_info["droneId"], "packageId": package_info["packageId"]})
         i+=1
         j+=1
     else:
-        print("\nPackage not assigned\n")
+        #print("\nPackage not assigned\n")
         unassignedPackageIds.append(package_info["packageId"])
         j+=1
     if i==len(drones_list):
         # end of drones that can be assigned - add rest of packages
-        print("rest of packages go into unassigned bucket")
+        #print("rest of packages go into unassigned bucket")
         while j< len(packages_list):
             package_info = packages_list[j]
             unassignedPackageIds.append(package_info["packageId"])
