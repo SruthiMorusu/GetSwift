@@ -1,5 +1,0 @@
-Implementation:
-Python is used to assign packages to the drones based on faster delivery time and deliver most number of packages
-I
-If we need to handle dispatching thousands of jobs per second to thousands of drivers, It's better to use low level language to improve processing time.
-Parallel processing can be done to process drone info and package info
